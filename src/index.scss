@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+label {
+  @apply text-xl;
+}
+
+.input {
+  @apply border border-gray-600 rounded p-1 outline-green-400;
+}
