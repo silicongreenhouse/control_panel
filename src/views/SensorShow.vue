@@ -35,9 +35,9 @@ function addEvent() {
             event.state
         }}</span></li>
         <li v-if="event.above">Above: {{ event.above }}</li>
-        <li v-if="event.below">Below:</li>
-        <li v-if="event.equal">Equal:</li>
-        <li v-if="event.value">Value:</li>
+        <li v-if="event.below">Below: {{ event.below }}</li>
+        <li v-if="event.equal">Equal: {{ event.equal }}</li>
+        <li v-if="event.value">Value: {{ event.value }}</li>
       </ul>
     </div>
   </div>
