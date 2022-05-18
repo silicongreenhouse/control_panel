@@ -7,7 +7,7 @@ const route = useRoute();
 
 <template>
     <Header />
-    <div class="container p-2">
+    <div class="container p-2 m-auto">
         <router-view :key="route.path"></router-view>
     </div>
 </template>
