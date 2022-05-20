@@ -7,7 +7,8 @@ const routes = [
   { path: '/home', name: 'home', redirect: { name: 'root' } },
   { path: '/sensors', name: 'sensors', component: () => import('/src/views/Sensors.vue') },
   { path: '/sensors/:id', name: 'sensors.show', component: () => import('/src/views/SensorShow.vue') },
-  { path: '/sensors/:id/addEvent', name: 'sensors.addEvent', component: () => import('/src/views/AddEvent.vue') }
+  { path: '/sensors/:id/addEvent', name: 'sensors.addEvent', component: () => import('/src/views/AddEvent.vue') },
+  { path: '/sensors/:id/editEvent/:eventId', name: 'sensors.editEvent', component: () => import('/src/views/EditEvent.vue') }
 ]
 
 const router = createRouter({

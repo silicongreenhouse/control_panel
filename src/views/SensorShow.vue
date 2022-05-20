@@ -3,6 +3,7 @@ import { onMounted, ref, Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { api } from '../services/api.service';
 import { Sensor } from '../types/sensor.interface';
+import { SensorEvent } from '../types/sensorEvent.interface';
 
 const route = useRoute()
 const router = useRouter()
@@ -17,6 +18,10 @@ onMounted(async () => {
 function addEvent() {
   router.push({name: "sensors.addEvent", params: {id}})
 }
+
+function editEvent(event: SensorEvent) {
+  router.push({name: "sensors.editEvent", params: {id, eventId: event.id}})
+}
 </script>
 
 <template>
@@ -27,9 +32,8 @@ function addEvent() {
   </div>
 
   <!--Events list-->
-  <div v-if="sensor.events">
-    <div class="grid grid-cols-2 gap-2">
-      <ul v-for="event in sensor.events" class="bg-orange-200 p-2 rounded-sm drop-shadow">
+    <div class="grid grid-cols-2 gap-2" v-if="sensor.events">
+      <ul v-for="event in sensor.events" class="bg-orange-200 p-2 rounded-sm drop-shadow" @click="editEvent(event)">
         <li>Executor: {{ event.executor }}</li>
         <li>State: <span :class="{ 'text-green-600': event.state === 'on', 'text-red-600': event.state === 'off' }">{{
             event.state
@@ -40,7 +44,6 @@ function addEvent() {
         <li v-if="event.value">Value: {{ event.value }}</li>
       </ul>
     </div>
-  </div>
 
   <!--No events message-->
   <div v-else>
