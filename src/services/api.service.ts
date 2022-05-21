@@ -1,6 +1,6 @@
-import { ref } from 'vue'
+import { ref } from 'vue';
 import { Executor } from '../types/executor.interface';
-import { Sensor } from '../types/sensor.interface'
+import { Sensor } from '../types/sensor.interface';
 import { SensorEvent } from '../types/sensorEvent.interface';
 
 export const api = ref({
