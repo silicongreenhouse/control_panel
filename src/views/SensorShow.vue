@@ -33,7 +33,7 @@ function editEvent(event: SensorEvent) {
 
   <!--Events list-->
     <div class="grid grid-cols-2 gap-2" v-if="sensor.events">
-      <ul v-for="event in sensor.events" class="bg-orange-200 p-2 rounded-sm drop-shadow" @click="editEvent(event)">
+      <ul v-for="event in sensor.events" class="bg-orange-200 p-2 rounded-sm drop-shadow hover:cursor-pointer" @click="editEvent(event)">
         <li>Executor: {{ event.executor }}</li>
         <li>State: <span :class="{ 'text-green-600': event.state === 'on', 'text-red-600': event.state === 'off' }">{{
             event.state
