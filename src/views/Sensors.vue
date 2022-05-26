@@ -20,7 +20,7 @@ function showSensor(id: string) {
 
 <template>
   <div class="grid grid-cols-2 gap-2">
-    <div v-for="sensor in sensors" :key="sensor.id" class="bg-gray-400 text-center py-8" @click="showSensor(sensor.id)">
+    <div v-for="sensor in sensors" :key="sensor.id" class="rounded bg-indigo-400 text-center py-8" @click="showSensor(sensor.id)">
       {{ sensor.name }}
     </div>
   </div>
