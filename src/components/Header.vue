@@ -12,6 +12,7 @@
     <nav class="flex justify-around text-lg bg-green-600 py-2">
       <router-link :to="{ name: 'sensors' }">Sensors</router-link>
       <router-link :to="{ name: 'dataStream' }">RealTime data</router-link>
+      <router-link :to="{ name: 'remoteController' }">Remote controller</router-link>
     </nav>
   </div>
 </template>

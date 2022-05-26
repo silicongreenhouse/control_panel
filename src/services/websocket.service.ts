@@ -4,12 +4,19 @@ const socketData = ref({
   water_level: 0,
   floor_humidity: "none",
 })
-const webSocket = new WebSocket("ws://localhost:3000/ws_client");
+const wsStreamData = new WebSocket("ws://localhost:3000/ws_client");
+const wsController = new WebSocket("ws://localhost:3000/ws_client_controller");
 
-webSocket.onmessage = ({ data }) => {
+wsStreamData.onmessage = ({ data }) => {
   let obj = JSON.parse(data)
   let { temperature, water_level, floor_humidity } = obj;
+
   socketData.value = { temperature, water_level, floor_humidity };
+
 }
 
-export { socketData }
+function toggleExecutor(id: string) {
+  wsController.send(id)
+}
+
+export { socketData, toggleExecutor }

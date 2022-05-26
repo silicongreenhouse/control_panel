@@ -9,7 +9,8 @@ const routes = [
   { path: '/sensors/:id', name: 'sensors.show', component: () => import('/src/views/SensorShow.vue') },
   { path: '/sensors/:id/addEvent', name: 'sensors.addEvent', component: () => import('/src/views/AddEvent.vue') },
   { path: '/sensors/:id/editEvent/:eventId', name: 'sensors.editEvent', component: () => import('/src/views/EditEvent.vue') },
-  { path: '/dataStream', name: 'dataStream', component: () => import('/src/views/RealTimeData.vue') }
+  { path: '/dataStream', name: 'dataStream', component: () => import('/src/views/RealTimeData.vue') },
+  { path: '/remoteController', name: 'remoteController', component: () => import('/src/views/RemoteController.vue') }
 ]
 
 const router = createRouter({
