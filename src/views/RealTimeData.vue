@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { socketData } from '../services/websocket.service';
+import RemoteController from './RemoteController.vue';
 </script>
 
 <template>
@@ -7,4 +8,5 @@ import { socketData } from '../services/websocket.service';
     <p>{{ name }}</p>
     <p>{{ value }}</p>
   </div>
+  <RemoteController/>
 </template>
