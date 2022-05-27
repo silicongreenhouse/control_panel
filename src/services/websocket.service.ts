@@ -4,8 +4,8 @@ const socketData = ref({
   water_level: 0,
   floor_humidity: "none",
 })
-const wsStreamData = new WebSocket("ws://localhost:3000/ws_client");
-const wsController = new WebSocket("ws://localhost:3000/ws_client_controller");
+const wsStreamData = new WebSocket("ws://192.168.0.10/ws_client");
+const wsController = new WebSocket("ws://192.168.0.10/ws_client_controller");
 
 wsStreamData.onmessage = ({ data }) => {
   let obj = JSON.parse(data)

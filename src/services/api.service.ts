@@ -4,7 +4,7 @@ import { Sensor } from '../types/sensor.interface';
 import { SensorEvent } from '../types/sensorEvent.interface';
 
 export const api = ref({
-  domain: `localhost:3000`,
+  domain: `192.168.0.10`,
 
   async getSensorById(id: string): Promise<Sensor> {
     const res = await fetch(`http://${this.domain}/api/sensors/${id}`);
